@@ -10,7 +10,7 @@
   {{-- Bootstrap icons --}}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"> 
   <link rel="stylesheet" href="css/style.css">
-  <title>go-Blog | {{ $title }}</title>
+  <title>ZEEBER MHANX | {{ $title }}</title>
 </head>
 <body>
     @include('partials.navbar')
