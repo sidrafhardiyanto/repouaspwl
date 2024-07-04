@@ -25,6 +25,9 @@
 5. Memasukkan seed  
 `php artisan db:seed`
 
+6. Menge-link storage agar dapat dibaca meskipun sudah ada di public
+`php artisan storage:link`
+
 - Note:  
 PHP yang kami gunakan adalah PHP 8.0.30  
 MySQL yang kami gunakan adalah MySQL 8.0.30
