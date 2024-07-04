@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        
+
         // User::create([
         //     'name' => 'sidra',
         //     'email' => 'sidra@gmail.com',
@@ -28,8 +28,8 @@ class DatabaseSeeder extends Seeder
             'username' => 'mamang',
             'email' => 'mamang@gmail.com',
             'password' => bcrypt('password')
-        ]); 
-        
+        ]);
+
         Category::create([
             'name' => 'Personal',
             'slug' => 'personal'
@@ -84,6 +84,6 @@ class DatabaseSeeder extends Seeder
         //     'user_id' => 2
         // ]);
 
-        
+
     }
 }
