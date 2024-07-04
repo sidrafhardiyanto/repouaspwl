@@ -62,3 +62,36 @@ Route::get('/dashboard/posts/checkSlug',[DashboardPostController::class, 'checkS
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
 
 Route::post('/posts/{post}/comments', [CommentController::class, 'store'])->middleware('auth');
+
+Route::get('/comments/{comment}/edit', [CommentController::class, 'edit'])->middleware('auth');
+Route::put('/comments/{comment}', [CommentController::class, 'update'])->middleware('auth');
+Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->middleware('auth');
+
+Route::get('/posts',[PostController::class, 'index']);
+Route::get('posts/{post:slug}',[PostController::class, 'show']);
+Route::get('categories', function () {
+    return view('categories', [
+        'title' => 'Post Categories',
+        'active' => 'categories',
+        'categories' => Category::all()
+    ]);
+});
+
+Route::get('/login',[LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login',[LoginController::class, 'authenticate']);
+
+Route::post('/logout',[LoginController::class, 'logout']);
+
+Route::get('/register',[RegisterController::class, 'index'])->middleware('guest');
+Route::post('/register',[RegisterController::class, 'store']);
+
+Route::get('/dashboard', function(){
+    return view('dashboard.index');
+})->middleware('auth');
+
+Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+Route::get('/dashboard/posts/checkSlug',[DashboardPostController::class, 'checkSlug']);
+
+Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
+
+Route::post('/posts/{post}/comments', [CommentController::class, 'store'])->middleware('auth');
