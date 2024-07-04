@@ -1,3 +1,41 @@
+# Tentang 
+
+> ## Anggota Kelompok
+> #### 1. SIDRA FEBRIAN HARDIYANTO   
+> `221240001231`  
+> #### 2. RIZKI ALAN HABIBI  
+> `221240001238`  
+> #### 3. M. GILANG M. W. SABDOKAFI  
+> `221240001248`
+
+## Langkah-langkah setup 
+
+1. Update dependency dari npm  
+`npm i`
+
+2. Update dependency php  
+`composer update`
+
+3. Setting environment  
+`cp .env.example .env` Lalu ubah nama databasenya
+
+4. Migrate Database  
+`php artisan migrate`
+
+5. Memasukkan seed  
+`php artisan db:seed`
+
+- Note:  
+PHP yang kami gunakan adalah PHP 8.0.30  
+MySQL yang kami gunakan adalah MySQL 8.0.30
+
+
+## Petunjuk Penggunaan
+1. Terdapat 2 role, _**user biasa**_ dan _**user admin**_. Untuk dapat menjadi admin, ubah data `0` atau `false` pada atribut `is_admin` pada tabel `users`.
+2. _User Admin_ memiliki kapabilitas untuk menambahkan atau menghapus kategori, hal ini dapat dilakukan di [dashboard](http://127.0.0.1:8000/dashboard).
+
+---
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
