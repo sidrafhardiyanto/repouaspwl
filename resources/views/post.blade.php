@@ -24,6 +24,16 @@
                 <div class="mb-3">
                     <strong>{{ $comment->user->name }}</strong> said:
                     <p>{{ $comment->body }}</p>
+                    @can('update', $comment)
+                        <a href="/comments/{{ $comment->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
+                    @endcan
+                    @can('delete', $comment)
+                        <form action="/comments/{{ $comment->id }}" method="POST" class="d-inline">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    @endcan
                 </div>
             @endforeach
 

@@ -106,7 +106,7 @@ class DashboardPostController extends Controller
             'category_id' => 'required',
             'image' => 'required|file|max:255',
             'body' => 'required'
-        ];   
+        ];
 
         if ($request->slug != $post->slug) {
             $rules['slug'] = 'required|unique:posts';
