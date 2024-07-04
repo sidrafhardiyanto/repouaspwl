@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,3 +61,4 @@ Route::get('/dashboard/posts/checkSlug',[DashboardPostController::class, 'checkS
 
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
 
+Route::post('/posts/{post}/comments', [CommentController::class, 'store'])->middleware('auth');
