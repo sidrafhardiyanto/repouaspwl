@@ -25,7 +25,7 @@
 5. Memasukkan seed  
 `php artisan db:seed`
 
-6. Menge-link storage agar dapat dibaca meskipun sudah ada di public
+6. Menge-link storage agar dapat dibaca meskipun sudah ada di public  
 `php artisan storage:link`
 
 - Note:  
